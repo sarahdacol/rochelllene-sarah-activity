@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         body {
             font-family: 'Rajdhani', sans-serif;
-            background: #0a0a0f;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eef8 50%, #f5f8ff 100%);
             min-height: 100vh;
-            color: #e0e0e0;
+            color: #1a1a2e;
             overflow-x: hidden;
         }
 
@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(90deg, transparent 98%, rgba(0, 255, 255, 0.03) 100%),
-                linear-gradient(0deg, transparent 98%, rgba(0, 255, 255, 0.03) 100%);
+                linear-gradient(90deg, transparent 98%, rgba(128, 0, 255, 0.08) 100%),
+                linear-gradient(0deg, transparent 98%, rgba(128, 0, 255, 0.08) 100%);
             background-size: 50px 50px;
             pointer-events: none;
             z-index: 0;
@@ -58,8 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 200, 255, 0.15) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -78,27 +78,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-weight: 900;
             text-align: center;
             margin-bottom: 40px;
-            background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
-            background-size: 200% auto;
+            background: linear-gradient(90deg, #8000ff, #ff0080, #00c8ff, #8000ff);
+            background-size: 300% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: shimmer 3s linear infinite;
             text-transform: uppercase;
             letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(128, 0, 255, 0.3);
         }
 
         @keyframes shimmer {
             0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
+            100% { background-position: 300% center; }
         }
 
         .form-card {
-            background: rgba(10, 10, 20, 0.8);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(128, 0, 255, 0.3);
+            border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(128, 0, 255, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
         }
 
         .form-group {
@@ -110,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.8rem;
             font-weight: 700;
-            color: #00ffff;
+            color: #8000ff;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
@@ -122,17 +124,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-family: 'Rajdhani', sans-serif;
             font-size: 1.1rem;
             font-weight: 500;
-            color: #e0e0e0;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 5px;
+            color: #1a1a2e;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(128, 0, 255, 0.2);
+            border-radius: 8px;
             outline: none;
             transition: all 0.3s ease;
         }
 
         input:focus {
-            border-color: #00ffff;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.1);
+            border-color: #8000ff;
+            box-shadow: 0 0 20px rgba(128, 0, 255, 0.3), inset 0 0 10px rgba(128, 0, 255, 0.05);
         }
 
         .btn-group {
@@ -147,20 +149,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-size: 0.9rem;
             font-weight: 700;
             padding: 15px 30px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 255, 0.2));
-            border: 2px solid #00ffff;
-            color: #00ffff;
+            background: linear-gradient(135deg, #8000ff, #ff0080);
+            border: none;
+            color: #fff;
             text-transform: uppercase;
             letter-spacing: 2px;
             cursor: pointer;
             transition: all 0.3s ease;
             clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            box-shadow: 0 4px 15px rgba(128, 0, 255, 0.4);
         }
 
         .submit-btn:hover {
-            background: #00ffff;
-            color: #0a0a0f;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(128, 0, 255, 0.6);
         }
 
         .back-btn {
@@ -169,8 +171,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-weight: 700;
             padding: 15px 30px;
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: rgba(255, 255, 255, 0.7);
+            border: 2px solid rgba(128, 0, 255, 0.4);
+            color: #8000ff;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -179,9 +181,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .back-btn:hover {
-            border-color: #ff00ff;
-            color: #ff00ff;
-            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+            border-color: #ff0080;
+            color: #ff0080;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
         }
 
         .scanlines {
@@ -194,8 +196,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(0, 0, 0, 0.1) 2px,
-                rgba(0, 0, 0, 0.1) 4px
+                rgba(128, 0, 255, 0.03) 2px,
+                rgba(128, 0, 255, 0.03) 4px
             );
             pointer-events: none;
             z-index: 1000;

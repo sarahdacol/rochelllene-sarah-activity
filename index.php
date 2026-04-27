@@ -21,9 +21,9 @@ $students = $stmt->fetchAll();
 
         body {
             font-family: 'Rajdhani', sans-serif;
-            background: #0a0a0f;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8eef8 50%, #f5f8ff 100%);
             min-height: 100vh;
-            color: #e0e0e0;
+            color: #1a1a2e;
             overflow-x: hidden;
         }
 
@@ -35,8 +35,8 @@ $students = $stmt->fetchAll();
             width: 100%;
             height: 100%;
             background: 
-                linear-gradient(90deg, transparent 98%, rgba(0, 255, 255, 0.03) 100%),
-                linear-gradient(0deg, transparent 98%, rgba(0, 255, 255, 0.03) 100%);
+                linear-gradient(90deg, transparent 98%, rgba(128, 0, 255, 0.08) 100%),
+                linear-gradient(0deg, transparent 98%, rgba(128, 0, 255, 0.08) 100%);
             background-size: 50px 50px;
             pointer-events: none;
             z-index: 0;
@@ -49,8 +49,8 @@ $students = $stmt->fetchAll();
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 20% 80%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 80%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(0, 200, 255, 0.15) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -69,19 +69,20 @@ $students = $stmt->fetchAll();
             font-weight: 900;
             text-align: center;
             margin-bottom: 40px;
-            background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
-            background-size: 200% auto;
+            background: linear-gradient(90deg, #8000ff, #ff0080, #00c8ff, #8000ff);
+            background-size: 300% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: shimmer 3s linear infinite;
             text-transform: uppercase;
             letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(128, 0, 255, 0.3);
         }
 
         @keyframes shimmer {
             0% { background-position: 0% center; }
-            100% { background-position: 200% center; }
+            100% { background-position: 300% center; }
         }
 
         .add-btn {
@@ -91,9 +92,9 @@ $students = $stmt->fetchAll();
             font-weight: 700;
             padding: 15px 40px;
             margin-bottom: 30px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
-            border: 2px solid #00ffff;
-            color: #00ffff;
+            background: linear-gradient(135deg, #8000ff, #ff0080);
+            border: none;
+            color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -101,6 +102,7 @@ $students = $stmt->fetchAll();
             overflow: hidden;
             transition: all 0.3s ease;
             clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            box-shadow: 0 4px 15px rgba(128, 0, 255, 0.4);
         }
 
         .add-btn::before {
@@ -110,14 +112,13 @@ $students = $stmt->fetchAll();
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transition: left 0.5s ease;
         }
 
         .add-btn:hover {
-            background: rgba(0, 255, 255, 0.2);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(128, 0, 255, 0.6);
         }
 
         .add-btn:hover::before {
@@ -128,11 +129,12 @@ $students = $stmt->fetchAll();
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            background: rgba(10, 10, 20, 0.8);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(128, 0, 255, 0.3);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(128, 0, 255, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
         }
 
         .data-table th {
@@ -143,9 +145,9 @@ $students = $stmt->fetchAll();
             text-align: left;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #00ffff;
-            background: linear-gradient(180deg, rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.05));
-            border-bottom: 2px solid #00ffff;
+            color: #8000ff;
+            background: linear-gradient(180deg, rgba(128, 0, 255, 0.1), rgba(128, 0, 255, 0.05));
+            border-bottom: 2px solid #8000ff;
             position: relative;
         }
 
@@ -156,17 +158,18 @@ $students = $stmt->fetchAll();
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            background: linear-gradient(90deg, transparent, #8000ff, transparent);
         }
 
         .data-table td {
             padding: 18px 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(128, 0, 255, 0.1);
             transition: all 0.3s ease;
+            color: #1a1a2e;
         }
 
         .data-table tr:hover td {
-            background: rgba(0, 255, 255, 0.05);
+            background: linear-gradient(90deg, rgba(128, 0, 255, 0.08), rgba(255, 0, 128, 0.05));
         }
 
         .data-table tr:last-child td {
@@ -174,7 +177,7 @@ $students = $stmt->fetchAll();
         }
 
         .data-table td:first-child {
-            color: #ff00ff;
+            color: #ff0080;
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
         }
@@ -194,33 +197,33 @@ $students = $stmt->fetchAll();
         }
 
         .edit-btn {
-            background: rgba(0, 255, 255, 0.1);
-            border: 1px solid #00ffff;
-            color: #00ffff;
+            background: linear-gradient(135deg, rgba(0, 200, 255, 0.15), rgba(0, 200, 255, 0.05));
+            border: 1px solid #00c8ff;
+            color: #00a0cc;
         }
 
         .edit-btn:hover {
-            background: #00ffff;
-            color: #0a0a0f;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            background: #00c8ff;
+            color: #fff;
+            box-shadow: 0 0 25px rgba(0, 200, 255, 0.5);
         }
 
         .delete-btn {
-            background: rgba(255, 0, 100, 0.1);
-            border: 1px solid #ff0064;
-            color: #ff0064;
+            background: linear-gradient(135deg, rgba(255, 0, 80, 0.15), rgba(255, 0, 80, 0.05));
+            border: 1px solid #ff0050;
+            color: #cc0040;
         }
 
         .delete-btn:hover {
-            background: #ff0064;
-            color: #0a0a0f;
-            box-shadow: 0 0 20px rgba(255, 0, 100, 0.5);
+            background: #ff0050;
+            color: #fff;
+            box-shadow: 0 0 25px rgba(255, 0, 80, 0.5);
         }
 
         .empty-state {
             text-align: center;
             padding: 60px 20px;
-            color: rgba(255, 255, 255, 0.5);
+            color: rgba(26, 26, 46, 0.5);
             font-size: 1.2rem;
         }
 
@@ -234,12 +237,11 @@ $students = $stmt->fetchAll();
                 0deg,
                 transparent,
                 transparent 2px,
-                rgba(0, 0, 0, 0.1) 2px,
-                rgba(0, 0, 0, 0.1) 4px
+                rgba(128, 0, 255, 0.03) 2px,
+                rgba(128, 0, 255, 0.03) 4px
             );
             pointer-events: none;
             z-index: 1000;
-            opacity: 0.3;
         }
     </style>
 </head>
